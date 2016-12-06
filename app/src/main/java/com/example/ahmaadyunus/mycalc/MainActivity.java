@@ -17,7 +17,6 @@ import android.widget.Toast;
 import java.security.PublicKey;
 
 public class MainActivity extends AppCompatActivity {
-    int balance;
     String number;
     boolean income_focused=false;
     EditText income_ET, outcome_ET;
@@ -69,23 +68,25 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 income_ET.setText("");
                 outcome_ET.setText("");
-                balance_TV.setText("Balance:");
+                balance_TV.setText(R.string.balance);
             }
         });
         FloatingActionButton fab_delete = (FloatingActionButton) findViewById(R.id.fab_delete);
         fab_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (income_focused == false) {
+                if (!income_focused) {
                     int length = income_ET.getText().length();
                     if (length > 0) {
                         income_ET.getText().delete(length - 1, length);
+                        balance_TV.setText(getString(R.string.balance));
                     }
                 } else {
                     int length = outcome_ET.getText().length();
                     if (length > 0) {
-                        outcome_ET.getText().delete(length-1,length
-                        );
+                        outcome_ET.getText().delete(length-1,length);
+                        balance_TV.setText(getString(R.string.balance));
+
                     }
                 }
             }
@@ -127,10 +128,13 @@ public class MainActivity extends AppCompatActivity {
             case R.id.nine_button:
                 number = "9";
                 break;
+            case R.id.zero_button:
+                number = "0";
+                break;
             default:
                 break;
         }
-        if (income_focused == false) {
+        if (!income_focused) {
             income_ET.setText(income_ET.getText().toString() + number);
         } else {
             outcome_ET.setText(outcome_ET.getText().toString() + number);
@@ -139,7 +143,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void displayBalance (int balance){
         balance_TV = (TextView) findViewById(R.id.balance_textView);
-        balance_TV.setText("Balance : "+balance);
+        balance_TV.setText(getString(R.string.balance)+" "+balance);
 
     }
 
