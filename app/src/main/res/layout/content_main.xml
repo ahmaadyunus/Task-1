@@ -119,10 +119,7 @@
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab_balance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="40dp"
-            android:clickable="true"
+            style="@style/fab_style"
             android:src="@drawable/ic_balan"
             app:layout_anchor="@id/viewOne"
             app:layout_anchorGravity="bottom|left|end"
@@ -130,26 +127,21 @@
             app:rippleColor="@color/colorPrimary" />
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab_reset"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="40dp"
-            android:clickable="true"
+            style="@style/fab_style"
             android:src="@drawable/ic_reset"
             app:layout_anchor="@id/viewOne"
             app:layout_anchorGravity="bottom|center"
             app:backgroundTint="@color/Divider"
             app:rippleColor="@color/colorPrimary" />
         <android.support.design.widget.FloatingActionButton
+            style="@style/fab_style"
             android:id="@+id/fab_delete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="40dp"
-            android:clickable="true"
             android:src="@drawable/ic_delete"
             app:layout_anchor="@id/viewOne"
             app:layout_anchorGravity="bottom|end"
             app:backgroundTint="@color/Divider"
-            app:rippleColor="@color/colorPrimary" />
+            app:rippleColor="@color/Divider"
+             />
     </android.support.design.widget.CoordinatorLayout>
 
 </RelativeLayout>
