@@ -5,4 +5,6 @@
     <string name="income">Income</string>
     <string name="outcome">Outcome</string>
     <string name="balance">Balance :</string>
+    <string name="warning">check your input</string>
+
 </resources>

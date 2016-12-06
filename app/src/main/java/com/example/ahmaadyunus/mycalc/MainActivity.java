@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                    bal = in - out;
                    displayBalance(bal);
                }catch(NumberFormatException nfe){
-                   Toast.makeText(getApplicationContext(), "Silahkan periksa inputan", Toast.LENGTH_SHORT).show();
+                   Toast.makeText(getApplicationContext(), R.string.warning , Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -67,8 +67,9 @@ public class MainActivity extends AppCompatActivity {
         fab_reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                income_ET.setText("");
+                outcome_ET.setText("");
+                balance_TV.setText("Balance:");
             }
         });
         FloatingActionButton fab_delete = (FloatingActionButton) findViewById(R.id.fab_delete);
